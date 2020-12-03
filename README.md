@@ -5,11 +5,13 @@ Here is a small experiment of event data embedding.
 3. we are looking for a method that is able to find sequences of the compound events types, that are similar to a target sequence of types
 4. we can, if needed, do some post processing (e.g. to check which debit cards are involved in the found sequences, or to find the final phone calls to the supervisor...)
 
-Program preprocess_data.py builds the compund events files. It has:
-input files:   atm_cell_tower_rels.csv, bank_offices.csv, debit_cards.csv;
-              generated/users_01_withdrawals.csv and generated/co_01_withdrawals.csv (01-05)
-              generated/users_01_phone_calls.csv and generated/co_01_phone_calls.csv (01-05)
+Program preprocess_data.py builds the compund events files. It has as input files: 
+   - atm_cell_tower_rels.csv, bank_offices.csv, debit_cards.csv;
+   - users_01_withdrawals.csv and co_01_withdrawals.csv (01-05)
+   - users_01_phone_calls.csv and co_01_phone_calls.csv (01-05)
+
 output file: typed_events.csv
+
 
 Program embed_data_short.py builds a very simple embedding of compunds events. It takes into account events that happened 10 minutes
    before and 10 minutes after a given event at the same atm. Embedding columns are:
